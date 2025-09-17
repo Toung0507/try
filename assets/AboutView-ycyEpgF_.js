@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as e}from"./index-BVmyfErH.js";const o={},c={class:"about"};function l(r,t){return n(),a("div",c,[...t[0]||(t[0]=[e("h1",null,"This is an about page..",-1),e("img",{src:"https://ctld.ntnu.edu.tw/wp-content/uploads/2019/06/03chi.png",alt:"學習成長表",class:"image"},null,-1)])])}const u=s(o,[["render",l]]);export{u as default};
