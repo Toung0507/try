@@ -1,24 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-
-// import HomeView from '../views/HomeView.vue'
-// import AboutView from '../views/AboutView.vue'
-// import ReviewView from '../views/ReviewView.vue'
-// import TodoView from '../views/TodoView.vue'
-
-
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      // component: () => import('../views/HomeView.vue'),
-    },
-    {
-      path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/Test',
+      name: 'test',
+      component: () => import('../views/TestOne.vue'),
     },
     {
       path: '/TodoView',
@@ -70,20 +63,6 @@ const router = createRouter({
 
   ],
 })
-
-
-// router.beforeEach((to, from, next) => {
-//   const userStore = useUserStore()
-//   userStore.initUser()
-
-//   if (to.meta.requiresAuth && !userStore.isLoggedIn) {
-//     alert('請先登入')
-//     next('/')
-//   } else {
-//     next()
-//   }
-// })
-
 
 router.onError((error, to) => {
   if (

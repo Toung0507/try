@@ -1,5 +1,4 @@
 <script setup>
-
 import { ref } from "vue";
 
 const drinks = ref([
@@ -63,61 +62,62 @@ const drinks = ref([
 </script>
 
 <template>
+  <div class="middleToDo">
+    <table>
+      <thead class="table">
+        <tr>
+          <th scope="col">品項</th>
+          <th scope="col">描述</th>
+          <th scope="col">價格</th>
+          <th scope="col">庫存</th>
+        </tr>
+      </thead>
 
-    <div class="middleToDo">
+      <!--  for 迴圈 vue -->
+      <tbody>
+        <tr v-for="tea in drinks" :key="tea.id">
+          <td> {{ tea.item }} </td>
 
-      
-        <table >
-          <thead class="table">
-            <tr>
-              <th scope="col">品項</th>
-              <th scope="col">描述</th>
-              <th scope="col">價格</th>
-              <th scope="col">庫存</th>
-            </tr>
-          </thead>
-          
-        <!--  for 迴圈 vue -->
-          <tbody>
-            <tr v-for="tea in drinks"
-                :key="tea.id">
-              <td> {{tea.item}} </td>
-              
-              <td><small> {{tea.desc}} </small></td>
-              
-              <td> {{tea.price}} 元</td>
-              
-              <td>
-                <button v-on:click="tea.counts--"  :disabled="tea.counts <=0" class="btn">-</button> 
-                {{tea.counts}} 
-                <button v-on:click="tea.counts++" class="btn">+</button></td>
-            </tr>
-            
-          </tbody>
-             
-            
-        </table>
-    </div>
+          <td><small> {{ tea.desc }} </small></td>
+
+          <td> {{ tea.price }} 元</td>
+
+          <td>
+            <button v-on:click="tea.counts--" :disabled="tea.counts <= 0" class="btn">-</button>
+            {{ tea.counts }}
+            <button v-on:click="tea.counts++" class="btn">+</button>
+          </td>
+        </tr>
+
+      </tbody>
+
+
+    </table>
+  </div>
 </template>
 
 <style>
-  th,tr,td{
-    border: 1px solid black;
-  }
-  td{
-    padding: 5px 10px;
-  }
-  
-  .middleToDo {
+th,
+tr,
+td {
+  border: 1px solid black;
+}
+
+td {
+  padding: 5px 10px;
+}
+
+.middleToDo {
   margin-top: 25px;
   margin-left: 300px;
 }
-.btn{
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bolder;
-    margin: 0.5px;
+
+.btn {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  margin: 0.5px;
 }
 </style>
